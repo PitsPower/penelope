@@ -33,7 +33,55 @@ var commands = [
                 }
             ]);
         }
-    }    
+    },
+    {
+        name: 'static',
+        desc: 'Gives more info on static websites',
+        exmaple: 'static',
+        action: function(msg, args) {
+            sendRichEmbed(msg, 'PHP and Neocities', [
+                {
+                    name: "Why can't I use PHP?",
+                    content: "Neocities doesn't support any back-end code such as PHP. This means that you can only create static websites on Neocities."
+                },
+                {
+                    name: 'What is a static site?',
+                    content: "A static website is a site with fixed content. This means that your website cannot use databases or any back-end code."
+                },
+                {
+                    name: 'What can I have on my static website?',
+                    content: "Static websites can have HTML, CSS and JavaScript code, as well as other types of files. The only thing they can't do is run server code (e.g. databases)."
+                },
+                {
+                    name: 'Can I get around these limitations?',
+                    content: "In a way, yes! You can use JavaScript to talk to other dynamic websites, which allows for some flexibility. However, Neocities doesn't provide hosting for dynamic websites, so you'll have to host them yourself."
+                }
+            ]);
+        }
+    },
+    {
+        name: 'filetypes',
+        desc: 'Gives more info on allowed file types',
+        example: 'filetypes',
+        action: function(msg, args) {
+            sendRichEmbed(msg, 'File Types', [
+                {
+                    name: 'Here are the allowed file types:',
+                    content: [
+                        "- HTML (.html, .htm)",
+                        "- Image (.jpg, .png, .gif, .svg, .ico)",
+                        "- Markdown (.md, .markdown)",
+                        "- JavaScript (.js, .json, .geojson)",
+                        "- CSS (.css)",
+                        "- Text (.txt, .text, .csv, .tsv)",
+                        "- XML (.xml)",
+                        "- Web Fonts (.eot, .ttf, .woff, .woff2, .svg)",
+                        "- MIDI Files (.mid, .midi)"
+                    ].join('\n')
+                }    
+            ]);
+        }
+    }
 ];
 
 client.on('message', function(msg) {
